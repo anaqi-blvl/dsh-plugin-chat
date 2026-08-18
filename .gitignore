@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# build / test artifacts
+dist/
+*.log
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

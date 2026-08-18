@@ -1,0 +1,32 @@
+{
+  "name": "dsh-chat",
+  "description": "Chat | Code tabs for the DSH web GUI. Chat mode is 1:1 with Code: chats are REAL DSH sessions living in one hidden temp-folder workspace (~/.dsh/dsh-chat-work, titled Chat) with the full agent toolset. The client only adds the tab bar, a New chat button, and workspace-group filtering; the official session list + conversation view do the rest.",
+  "version": "0.5.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "immediately": true
+    }
+  },
+  "license": "MIT"
+}
